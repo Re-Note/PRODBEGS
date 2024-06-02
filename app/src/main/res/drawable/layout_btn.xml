@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer shape with rounded corners (black) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/deepblue" />
+            <corners android:radius="10dp" /> <!-- Adjust the radius as needed -->
+        </shape>
+    </item>
+
+    <!-- Inner shape with rounded corners (white) -->
+    <item android:top="3dp" android:right="3dp" android:left="3dp" android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/deepblue" />
+            <corners android:radius="10dp" /> <!-- Adjust the radius as needed, should match the outer shape's radius -->
+        </shape>
+    </item>
+
+</layer-list>

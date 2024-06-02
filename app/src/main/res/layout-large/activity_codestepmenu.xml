@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 네비게이션 아이콘을 우측으로 배치 -->
+            <ImageView
+                android:id="@+id/navigation_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/prodiot_icon" />
+
+            <!-- 타이틀을 네비게이션 아이콘 오른쪽에 배치 -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/navigation_icon"
+                android:layout_centerVertical="true"
+                android:text="코드 스텝"
+                android:textStyle="bold"
+                android:fontFamily="@font/sansneo"
+                android:textSize="18dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="20dp" />
+            <!-- 툴바를 우측에 배치 -->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                app:title=" "
+                app:menu="@menu/mainmenu"
+                app:actionButtonStyle="@style/MyToolbarActionButtonStyle"> <!-- 이 부분을 추가하면 툴바가 오른쪽에 배치됩니다. -->
+            </com.google.android.material.appbar.MaterialToolbar>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background4"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="스텝 퀴즈"
+                android:textColor="@android:color/white"
+                android:textSize="80dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/sansneo"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="2"
+            android:columnCount="2"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/c_button"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:background="@drawable/gradient_background_c"></Button>
+
+            <Button
+                android:id="@+id/cs_button"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:background="@drawable/gradient_background_cs"></Button>
+
+            <Button
+                android:id="@+id/python_button"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:background="@drawable/gradient_background_py"></Button>
+
+            <Button
+                android:id="@+id/java_button"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="20dp"
+                android:background="@drawable/gradient_background_ja"></Button>
+        </GridLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+        <!-- 하단 네비게이션 바 -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:menu="@menu/bottom_navigation_menu"
+            app:labelVisibilityMode="labeled"
+            android:background="#3F51B5"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:itemIconSize="48dp"
+            app:itemTextAppearanceActive="@style/BottomNavigationLarge"
+            app:itemTextAppearanceInactive="@style/BottomNavigationLarge"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

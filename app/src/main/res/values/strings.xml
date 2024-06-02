@@ -1,0 +1,30 @@
+<resources>
+<!-- 기존 리소스들 -->
+
+<string name="app_name">PRODIOT</string>
+<!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Kakao KEY설정[AndroidManifest.xml에도 설정]-->
+    <!-- Kakao-init에서 사용 -->
+    <string name="kakao_app_key">8e97db47f98b48ee9add805da3d3b42c</string>
+    <!-- AndroidManifest.xml에서 사용 -->
+    <string name="kakao_app_key2">kakao8e97db47f98b48ee9add805da3d3b42c</string>
+
+    <string-array name="categorys">
+        <item>선택</item>
+        <item>일반 게시글</item>
+        <item>환경 설정</item>
+        <item>기본 문법</item>
+        <item>심화 문법</item>
+        <!-- 다른 언어를 추가할 수 있습니다. -->
+    </string-array>
+
+    <string-array name="languages">
+        <item>선택</item>
+        <item>C</item>
+        <item>C#</item>
+        <item>Java</item>
+        <item>Python</item>
+        <!-- 다른 언어를 추가할 수 있습니다. -->
+    </string-array>
+</resources>

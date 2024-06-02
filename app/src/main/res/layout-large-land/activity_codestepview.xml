@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!-- 네비게이션 아이콘을 우측으로 배치 -->
+            <ImageView
+                android:id="@+id/navigation_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/prodiot_icon" />
+
+            <!-- 타이틀을 네비게이션 아이콘 오른쪽에 배치 -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/navigation_icon"
+                android:layout_centerVertical="true"
+                android:text="스텝"
+                android:textStyle="bold"
+                android:fontFamily="@font/sansneo"
+                android:textSize="36dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginStart="20dp" />
+            <!-- 툴바를 우측에 배치 -->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                app:title=" "
+                app:menu="@menu/mainmenu"
+                app:actionButtonStyle="@style/MyToolbarActionButtonStyle"> <!-- 이 부분을 추가하면 툴바가 오른쪽에 배치됩니다. -->
+            </com.google.android.material.appbar.MaterialToolbar>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="240dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background5"
+            android:gravity="top"
+            android:orientation="vertical"
+            tools:context=".CodeStepView">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <EditText
+                    android:id="@+id/title_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="제목"
+                    android:minLines="1"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:scrollbars = "vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+                <EditText
+                    android:id="@+id/content_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="내용"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
+                    android:scrollbars = "vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/code_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="코드"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:gravity="top"
+                    android:minLines="10"
+                    android:scrollbars="vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+                <EditText
+                    android:id="@+id/input_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="입력 값"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:gravity="top"
+                    android:minLines="1"
+                    android:scrollbars = "vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+                <TextView
+                    android:id="@+id/output_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="실행 결과"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:gravity="top"
+                    android:minLines="3"
+                    android:scrollbars="vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+                <EditText
+                    android:id="@+id/compilation_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="컴파일 결과"
+                    android:fontFamily="@font/sansneo"
+                    android:textSize="36dp"
+                    android:gravity="top"
+                    android:minLines="4"
+                    android:scrollbars="vertical"
+                    android:layout_margin="40dp"
+                    android:padding="20dp"
+                    android:background="@drawable/layout_textview"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/background5"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btn_run"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:text="정답 제출하기"
+            android:textStyle="bold"
+            android:textSize="36dp"
+            android:fontFamily="@font/sansneo"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:background="@drawable/layout_btn"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+        <!-- 하단 네비게이션 바 -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:menu="@menu/bottom_navigation_menu"
+            app:labelVisibilityMode="labeled"
+            android:background="#3F51B5"
+            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/white"
+            app:itemIconSize="48dp"
+            app:itemTextAppearanceActive="@style/BottomNavigationLarge"
+            app:itemTextAppearanceInactive="@style/BottomNavigationLarge"/>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Login"
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode ="adjustNothing">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".SignUpEmail"></activity>
+        <activity android:name=".SignUpPassword"></activity>
+        <activity android:name=".SignUpName"></activity>
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".AppUserInfo"></activity>
+        <activity android:name=".AppUserUpdate"></activity>
+        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".FreeBoardList"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".FreeBoardView"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".FreeBoardWrite"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepList"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepView"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepWrite"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CategoryList"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+                <!-- scheme-ex: "kakao{NATIVE_APP_KEY}" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="@string/kakao_app_key2"
+                    tools:ignore="AppLinkUrlError" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CodeStepMenu"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepList_C"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepList_JAVA"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepList_PYTHON"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".CodeStepList_CS"
+            android:windowSoftInputMode="adjustResize"></activity>
+    </application>
+</manifest>
